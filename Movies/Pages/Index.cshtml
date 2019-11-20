@@ -33,30 +33,43 @@
 
     <div class="checkbox-list">
         <form method="post">
-            <input type="text" name="search" id="search" />
+            <input type="text" name="Search" id="search" value="@Model.Search"/>
             <input type="submit" value="Search and Filter" />
+            <input type="reset" value="Clear" />
 
             <h2> MPAA Rating</h2>
             <label>
-                <input type="checkbox" name="rating" value="G" />
+                <input type="checkbox" name="Rating" value="G" checked="@Model.Rating.Contains("G")" />
                 Rated G
             </label>
             <label>
-                <input type="checkbox" name="rating" value="PG" />
+                <input type="checkbox" name="Rating" value="PG" checked="@Model.Rating.Contains("PG")" />
                 Rated PG
             </label>
             <label>
-                <input type="checkbox" name="rating" value="PG-13" />
+                <input type="checkbox" name="Rating" value="PG-13" checked="@Model.Rating.Contains("PG-13")" />
                 Rated PG-13
             </label>
             <label>
-                <input type="checkbox" name="rating" value="R" />
+                <input type="checkbox" name="Rating" value="R" checked="@Model.Rating.Contains("R")" />
                 Rated R
             </label>
             <label>
-                <input type="checkbox" name="rating" value="NC-17" />
+                <input type="checkbox" name="Rating" value="NC-17" checked="@Model.Rating.Contains("NC-17")" />
                 Rated NC-17
             </label>
+
+            <h4>Review Scores</h4>
+            <label>
+                Minimum IMDB Rating:
+                <input type="number" min="0" max="10" step="0.1" name="MinIMDB" value="@Model.MinIMDB"/>
+            </label>
+            <label>
+                Maximum IMDB Rating:
+                <input type="number" min="0" max="10" step="0.1" name="MaxIMDB" value="@Model.MaxIMDB"/>
+            </label>
+
+
 
         </form>
     </div>
